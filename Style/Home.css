@@ -1,60 +1,140 @@
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  background: white;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #ff69b4;
-  padding: 19px 40px;
+  padding: 18px 40px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 32px;
   color: white;
   font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 30px;
-  font-size: 25px;
+  font-size: 22px;
 }
 
+/* Hero Banner */
 .hero img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
-
+/* Category Title */
 .cat {
   text-align: center;
-  font-size: 28px;
-  margin: 20px 0;
+  font-size: 35px;
+  margin: 30px 0;
+  color: #333;
 }
 
-
+/* Cards Section */
 .cart {
-  display: flex;
-  justify-content: center;
-  gap: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+  justify-items: center;
 }
-
 
 .card {
   text-align: center;
+  background: #fff0f7;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 320px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .card p {
-  margin-top: 10px;
+  margin-top: 15px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
+  color: #222;
+}
+
+/* Tablet Responsive */
+@media (max-width: 992px) {
+
+  .cart {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .cat {
+    font-size: 28px;
+  }
+
+  .cart {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  .card p {
+    font-size: 22px;
+  }
 }
